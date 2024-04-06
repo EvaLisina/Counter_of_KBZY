@@ -2,7 +2,7 @@ activities = {'сидячая': 1.2, 'низкая': 1.375, "средняя": 1.
 
 def information():
   try:
-    weight = float(input("Введите ваш вес цифрой: "))
+    weight = float(input("Введите ваш вес: "))
     height = float(input("Введите ваш рост: "))
     nums = int(input("Введите ваш возраст: "))
     pol = input("Выберите ваш пол (м/ж): ")
