@@ -1,25 +1,24 @@
 activities = {'сидячая': 1.2, 'низкая': 1.375, "средняя": 1.55, "высокая": 1.725}
 
 def information():
-  try:
-    weight = float(input("Введите ваш вес: "))
-    height = float(input("Введите ваш рост: "))
-    nums = int(input("Введите ваш возраст: "))
-    pol = input("Выберите ваш пол (м/ж): ")
-    while pol not in ['м', 'ж']:
-        pol = input("Введите подходящее значение: ")
-    activ = input("Выберите вашу активность (сидячая, низкая, средняя, высокая): ")
-    while activ not in ['сидячая', 'низкая', 'средняя', 'высокая']:
-      activ = input("Введите подходящее значение: ")
-    want = input('Что вы хотите сделать? (похудеть, поддерживать вес, набрать вес): ')
-    while want not in ['похудеть', 'поддерживать вес', 'набрать вес']:
-        want = input("Введите подходящее значение: ")
-  except ValueError:
-    print("Начините заполнение данные сначала программы.")
-    information()
+    try:
+        weight = float(input("Введите ваш вес: "))
+        height = int(input("Введите ваш рост: "))
+        nums = int(input("Введите ваш возраст: "))
+        pol = input("Выберите ваш пол (м/ж): ")
+        while pol not in ['м', 'ж']:
+            pol = input("Введите подходящее значение: ")
+        activ = input("Выберите вашу активность (сидячая, низкая, средняя, высокая): ")
+        while activ not in ['сидячая', 'низкая', 'средняя', 'высокая']:
+            activ = input("Введите подходящее значение: ")
+        want = input('Что вы хотите сделать? (похудеть, поддерживать вес, набрать вес): ')
+        while want not in ['похудеть', 'поддерживать вес', 'набрать вес']:
+            want = input("Введите подходящее значение: ")
+    except ValueError:
+        print("Начините заполнение данных сначала программы.")
+        information()
     
-
-  calculate(weight, height, nums, pol, activ, want)
+    calculate(weight, height, nums, pol, activ, want)
 
 def calculate(w, h, n, p, a, wnt):
   all_m = (88.36 + (13.4 * w) + (4.8 * h) - (5.7 * n)) * activities[a]
